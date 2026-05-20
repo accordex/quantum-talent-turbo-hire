@@ -1,0 +1,83 @@
+{
+  "name": "JobAlert",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "User-defined name for this alert"
+    },
+    "keywords": {
+      "type": "string",
+      "description": "Search keywords / job title"
+    },
+    "location": {
+      "type": "string",
+      "description": "Preferred location"
+    },
+    "work_mode": {
+      "type": "string",
+      "enum": [
+        "all",
+        "remote",
+        "hybrid",
+        "onsite"
+      ],
+      "default": "all"
+    },
+    "job_type": {
+      "type": "string",
+      "enum": [
+        "all",
+        "full_time",
+        "part_time",
+        "contract",
+        "internship"
+      ],
+      "default": "all"
+    },
+    "experience_level": {
+      "type": "string",
+      "enum": [
+        "all",
+        "entry",
+        "mid",
+        "senior",
+        "lead",
+        "executive"
+      ],
+      "default": "all"
+    },
+    "salary_min": {
+      "type": "number",
+      "description": "Minimum acceptable salary"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Required skills to match"
+    },
+    "notify_email": {
+      "type": "boolean",
+      "default": true,
+      "description": "Send email notifications"
+    },
+    "notify_inapp": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show in-app notifications"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "last_notified_at": {
+      "type": "string",
+      "description": "ISO timestamp of last notification sent"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

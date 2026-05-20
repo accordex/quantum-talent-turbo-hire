@@ -1,0 +1,47 @@
+{
+  "name": "Application",
+  "type": "object",
+  "properties": {
+    "job_id": {
+      "type": "string",
+      "description": "Reference to Job"
+    },
+    "job_title": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "applied",
+        "reviewed",
+        "interview",
+        "offered",
+        "rejected",
+        "withdrawn"
+      ],
+      "default": "applied"
+    },
+    "resume_url": {
+      "type": "string"
+    },
+    "cover_letter": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "is_shortlisted": {
+      "type": "boolean",
+      "default": false,
+      "description": "Recruiter has shortlisted this candidate"
+    }
+  },
+  "required": [
+    "job_id",
+    "job_title",
+    "company"
+  ]
+}
