@@ -1,0 +1,42 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user this notification belongs to"
+    },
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "job_alert",
+        "application_update",
+        "system"
+      ],
+      "default": "job_alert"
+    },
+    "job_id": {
+      "type": "string",
+      "description": "Related job ID if any"
+    },
+    "alert_id": {
+      "type": "string",
+      "description": "The JobAlert that triggered this"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "user_email",
+    "title",
+    "message"
+  ]
+}
