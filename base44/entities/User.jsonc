@@ -1,0 +1,167 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "description": "The role of the user in the app",
+      "enum": [
+        "admin",
+        "user"
+      ]
+    },
+    "headline": {
+      "type": "string",
+      "description": "Professional headline, e.g. Senior React Developer"
+    },
+    "location": {
+      "type": "string",
+      "description": "City, State or Remote"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Short professional summary"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "Profile picture URL"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of skills"
+    },
+    "experience": {
+      "type": "array",
+      "description": "Work experience history",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "is_current": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "description": "Education history",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "institution": {
+            "type": "string"
+          },
+          "degree": {
+            "type": "string"
+          },
+          "field_of_study": {
+            "type": "string"
+          },
+          "start_year": {
+            "type": "string"
+          },
+          "end_year": {
+            "type": "string"
+          },
+          "is_current": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resume_url": {
+      "type": "string",
+      "description": "Uploaded resume file URL"
+    },
+    "resume_filename": {
+      "type": "string",
+      "description": "Original resume filename"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether profile is visible to recruiters"
+    },
+    "work_authorization": {
+      "type": "string",
+      "enum": [
+        "us_citizen",
+        "green_card",
+        "h1b",
+        "h4_ead",
+        "opt",
+        "stem_opt",
+        "tn_permit",
+        "other"
+      ],
+      "description": "Work authorization status"
+    },
+    "desired_job_type": {
+      "type": "string",
+      "enum": [
+        "full_time",
+        "part_time",
+        "contract",
+        "internship",
+        "any"
+      ]
+    },
+    "desired_work_mode": {
+      "type": "string",
+      "enum": [
+        "remote",
+        "hybrid",
+        "onsite",
+        "any"
+      ]
+    },
+    "desired_salary_min": {
+      "type": "number"
+    },
+    "desired_salary_max": {
+      "type": "number"
+    },
+    "linkedin_url": {
+      "type": "string"
+    },
+    "github_url": {
+      "type": "string"
+    },
+    "portfolio_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "role"
+  ]
+}
